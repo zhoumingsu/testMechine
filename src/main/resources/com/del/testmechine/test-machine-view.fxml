@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.del.testmechine.TestMachineController"
+            stylesheets="@styles.css" prefHeight="800.0" prefWidth="1200.0">
+   
+   <!-- 顶部：标题和测试参数 -->
+   <top>
+      <VBox styleClass="header-section">
+         <padding>
+            <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
+         </padding>
+         
+         <!-- 标题 -->
+         <Label text="测试台控制面板" styleClass="main-title">
+            <font>
+               <Font name="System Bold" size="24.0" />
+            </font>
+         </Label>
+         <Separator />
+         
+         <!-- 测试参数区域 -->
+         <TitledPane text="测试参数配置" expanded="true" collapsible="false">
+            <VBox spacing="8.0">
+               <padding>
+                  <Insets bottom="8.0" left="10.0" right="10.0" top="8.0" />
+               </padding>
+               
+               <!-- 参数输入网格 -->
+               <GridPane hgap="8.0" vgap="6.0">
+                  <!-- 第一行：参数1-5 -->
+                  <Label text="电压校准值:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                  <TextField fx:id="param1Field" promptText="0.01V" prefWidth="80.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                  <Button fx:id="testParam1Button" text="测试" onAction="#onTestParam1" styleClass="param-test-button" prefWidth="50.0" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+
+                  <Label text="电压校准范围:" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                  <TextField fx:id="param2Field" promptText="0.01V" prefWidth="80.0" GridPane.columnIndex="4" GridPane.rowIndex="0" />
+                  <Button fx:id="testParam2Button" text="测试" onAction="#onTestParam2" styleClass="param-test-button" prefWidth="50.0" GridPane.columnIndex="5" GridPane.rowIndex="0" />
+                  
+                  <Label text="出厂日期:" GridPane.columnIndex="6" GridPane.rowIndex="0" />
+                  <TextField fx:id="param3Field" promptText="年月日时分" prefWidth="100.0" GridPane.columnIndex="7" GridPane.rowIndex="0" />
+                  <Button fx:id="testParam3Button" text="测试" onAction="#onTestParam3" styleClass="param-test-button" prefWidth="50.0" GridPane.columnIndex="8" GridPane.rowIndex="0" />
+                  
+                  <Label text="电池串数:" GridPane.columnIndex="9" GridPane.rowIndex="0" />
+                  <TextField fx:id="param4Field" promptText="串" prefWidth="80.0" GridPane.columnIndex="10" GridPane.rowIndex="0" />
+                  <Button fx:id="testParam4Button" text="测试" onAction="#onTestParam4" styleClass="param-test-button" prefWidth="50.0" GridPane.columnIndex="11" GridPane.rowIndex="0" />
+                  
+                  <!-- 第二行：参数5-8 -->
+                  <Label text="产品功耗:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                  <TextField fx:id="param5Field" promptText="mW" prefWidth="80.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button fx:id="testParam5Button" text="测试" onAction="#onTestParam5" styleClass="param-test-button" prefWidth="50.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+
+                  <Label text="产品功耗范围:" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <TextField fx:id="param6Field" promptText="mW" prefWidth="80.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                  <Button fx:id="testParam6Button" text="测试" onAction="#onTestParam6" styleClass="param-test-button" prefWidth="50.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+
+                  <Label text="充电老化时间:" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                  <TextField fx:id="param7Field" promptText="S" prefWidth="80.0" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+                  <Button fx:id="testParam7Button" text="测试" onAction="#onTestParam7" styleClass="param-test-button" prefWidth="50.0" GridPane.columnIndex="8" GridPane.rowIndex="1" />
+
+                  <Label text="最大充电电流:" GridPane.columnIndex="9" GridPane.rowIndex="1" />
+                  <TextField fx:id="param8Field" promptText="0.1A" prefWidth="80.0" GridPane.columnIndex="10" GridPane.rowIndex="1" />
+                  <Button fx:id="testParam8Button" text="测试" onAction="#onTestParam8" styleClass="param-test-button" prefWidth="50.0" GridPane.columnIndex="11" GridPane.rowIndex="1" />
+
+                  <!-- 第三行：参数9-12 -->
+                  <Label text="充电电流范围:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                  <TextField fx:id="param9Field" promptText="0.1A" prefWidth="80.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Button fx:id="testParam9Button" text="测试" onAction="#onTestParam9" styleClass="param-test-button" prefWidth="50.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+
+                  <Label text="最大充电温度:" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <TextField fx:id="param10Field" promptText="0.1°" prefWidth="80.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                  <Button fx:id="testParam10Button" text="测试" onAction="#onTestParam10" styleClass="param-test-button" prefWidth="50.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+
+                  <Label text="充电温度范围:" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                  <TextField fx:id="param11Field" promptText="0.1°" prefWidth="80.0" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+                  <Button fx:id="testParam11Button" text="测试" onAction="#onTestParam11" styleClass="param-test-button" prefWidth="50.0" GridPane.columnIndex="8" GridPane.rowIndex="2" />
+
+                  <Label text="最大充电均衡电流:" GridPane.columnIndex="9" GridPane.rowIndex="2" />
+                  <TextField fx:id="param12Field" promptText="0.01A" prefWidth="80.0" GridPane.columnIndex="10" GridPane.rowIndex="2" />
+                  <Button fx:id="testParam12Button" text="测试" onAction="#onTestParam12" styleClass="param-test-button" prefWidth="50.0" GridPane.columnIndex="11" GridPane.rowIndex="2" />
+
+                  <!-- 第四行：参数13-16 -->
+                  <Label text="充电均衡范围:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                  <TextField fx:id="param13Field" promptText="0.01A" prefWidth="80.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Button fx:id="testParam13Button" text="测试" onAction="#onTestParam13" styleClass="param-test-button" prefWidth="50.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+
+                  <Label text="放电老化时间:" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <TextField fx:id="param14Field" promptText="S" prefWidth="80.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                  <Button fx:id="testParam14Button" text="测试" onAction="#onTestParam14" styleClass="param-test-button" prefWidth="50.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+
+                  <Label text="最大放电电流:" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+                  <TextField fx:id="param15Field" promptText="0.1A" prefWidth="80.0" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+                  <Button fx:id="testParam15Button" text="测试" onAction="#onTestParam15" styleClass="param-test-button" prefWidth="50.0" GridPane.columnIndex="8" GridPane.rowIndex="3" />
+
+                  <Label text="放电电流范围:" GridPane.columnIndex="9" GridPane.rowIndex="3" />
+                  <TextField fx:id="param16Field" promptText="0.1A" prefWidth="80.0" GridPane.columnIndex="10" GridPane.rowIndex="3" />
+                  <Button fx:id="testParam16Button" text="测试" onAction="#onTestParam16" styleClass="param-test-button" prefWidth="50.0" GridPane.columnIndex="11" GridPane.rowIndex="3" />
+
+                  <!-- 第五行：参数17-20 -->
+                  <Label text="最大放电温度:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                  <TextField fx:id="param17Field" promptText="°" prefWidth="80.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Button fx:id="testParam17Button" text="测试" onAction="#onTestParam17" styleClass="param-test-button" prefWidth="50.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+
+                  <Label text="放电温度范围:" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <TextField fx:id="param18Field" promptText="°" prefWidth="80.0" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                  <Button fx:id="testParam18Button" text="测试" onAction="#onTestParam18" styleClass="param-test-button" prefWidth="50.0" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+
+                  <Label text="最大放电均衡电流:" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+                  <TextField fx:id="param19Field" promptText="0.01A" prefWidth="80.0" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+                  <Button fx:id="testParam19Button" text="测试" onAction="#onTestParam19" styleClass="param-test-button" prefWidth="50.0" GridPane.columnIndex="8" GridPane.rowIndex="4" />
+
+                  <Label text="放电均衡范围:" GridPane.columnIndex="9" GridPane.rowIndex="4" />
+                  <TextField fx:id="param20Field" promptText="0.01A" prefWidth="80.0" GridPane.columnIndex="10" GridPane.rowIndex="4" />
+                  <Button fx:id="testParam20Button" text="测试" onAction="#onTestParam20" styleClass="param-test-button" prefWidth="50.0" GridPane.columnIndex="11" GridPane.rowIndex="4" />
+               </GridPane>
+               
+               <!-- 参数控制按钮 -->
+               <HBox spacing="10.0" alignment="CENTER">
+                  <Button fx:id="saveParamsButton" text="保存参数配置" onAction="#onSaveParams" styleClass="control-button" />
+                  <Button fx:id="loadParamsButton" text="加载参数配置" onAction="#onLoadParams" styleClass="control-button" />
+                  <Button fx:id="refreshPortsButton" text="刷新串口" onAction="#onRefreshPorts" styleClass="control-button" />
+                  <Separator orientation="VERTICAL" />
+                  <CheckBox fx:id="autoModeCheckBox" text="自动模式" />
+                  <CheckBox fx:id="singleTestCheckBox" text="单项测试" />
+               </HBox>
+            </VBox>
+         </TitledPane>
+      </VBox>
+   </top>
+   
+   <!-- 中央：6个测试区域 -->
+   <center>
+      <VBox VBox.vgrow="ALWAYS" spacing="3.0">
+         <padding>
+            <Insets bottom="3.0" left="10.0" right="10.0" top="3.0" />
+         </padding>
+
+         <!-- 第一行：测试区域1、2、3 -->
+         <HBox HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS" spacing="5.0">
+            <!-- 测试区域1 -->
+            <VBox HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS" spacing="2.0" styleClass="test-area-card">
+               <padding>
+                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+               </padding>
+               <Label text="测试区域1" styleClass="area-title" />
+               
+               <!-- 串口连接控制 -->
+               <HBox spacing="5.0" alignment="CENTER_LEFT">
+                  <ComboBox fx:id="area1PortComboBox" prefWidth="80.0" promptText="串口" />
+                  <Button fx:id="area1ConnectButton" text="连接" prefWidth="50.0" onAction="#onArea1Connect" styleClass="connect-button" />
+                  <Button fx:id="area1DisconnectButton" text="断开" prefWidth="50.0" onAction="#onArea1Disconnect" disable="true" styleClass="disconnect-button" />
+                  <Label fx:id="area1StatusLabel" text="未连接" styleClass="connection-status" />
+               </HBox>
+               
+               <TextArea fx:id="testArea1" VBox.vgrow="ALWAYS" minHeight="130.0" prefHeight="150.0"
+                        promptText="测试区域1的结果将在这里显示..."
+                        styleClass="test-area-text" editable="false" wrapText="true" />
+               <Button fx:id="testButton1" text="测试1" styleClass="start-button"
+                       prefWidth="100.0" onAction="#onTest1" disable="true" />
+            </VBox>
+            
+            <!-- 测试区域2 -->
+            <VBox HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS" spacing="2.0" styleClass="test-area-card">
+               <padding>
+                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+               </padding>
+               <Label text="测试区域2" styleClass="area-title" />
+
+               <!-- 串口连接控制 -->
+               <HBox spacing="5.0" alignment="CENTER_LEFT">
+                  <ComboBox fx:id="area2PortComboBox" prefWidth="80.0" promptText="串口" />
+                  <Button fx:id="area2ConnectButton" text="连接" prefWidth="50.0" onAction="#onArea2Connect" styleClass="connect-button" />
+                  <Button fx:id="area2DisconnectButton" text="断开" prefWidth="50.0" onAction="#onArea2Disconnect" disable="true" styleClass="disconnect-button" />
+                  <Label fx:id="area2StatusLabel" text="未连接" styleClass="connection-status" />
+               </HBox>
+
+               <TextArea fx:id="testArea2" VBox.vgrow="ALWAYS" minHeight="130.0" prefHeight="150.0"
+                        promptText="测试区域2的结果将在这里显示..."
+                        styleClass="test-area-text" editable="false" wrapText="true" />
+               <Button fx:id="testButton2" text="测试2" styleClass="start-button"
+                       prefWidth="100.0" onAction="#onTest2" disable="true" />
+            </VBox>
+
+            <!-- 测试区域3 -->
+            <VBox HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS" spacing="2.0" styleClass="test-area-card">
+               <padding>
+                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+               </padding>
+               <Label text="测试区域3" styleClass="area-title" />
+
+               <!-- 串口连接控制 -->
+               <HBox spacing="5.0" alignment="CENTER_LEFT">
+                  <ComboBox fx:id="area3PortComboBox" prefWidth="80.0" promptText="串口" />
+                  <Button fx:id="area3ConnectButton" text="连接" prefWidth="50.0" onAction="#onArea3Connect" styleClass="connect-button" />
+                  <Button fx:id="area3DisconnectButton" text="断开" prefWidth="50.0" onAction="#onArea3Disconnect" disable="true" styleClass="disconnect-button" />
+                  <Label fx:id="area3StatusLabel" text="未连接" styleClass="connection-status" />
+               </HBox>
+
+               <TextArea fx:id="testArea3" VBox.vgrow="ALWAYS" minHeight="130.0" prefHeight="150.0"
+                        promptText="测试区域3的结果将在这里显示..."
+                        styleClass="test-area-text" editable="false" wrapText="true" />
+               <Button fx:id="testButton3" text="测试3" styleClass="start-button"
+                       prefWidth="100.0" onAction="#onTest3" disable="true" />
+            </VBox>
+         </HBox>
+         
+         <!-- 第二行：测试区域4、5、6 -->
+         <HBox HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS" spacing="5.0">
+            <!-- 测试区域4 -->
+            <VBox HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS" spacing="2.0" styleClass="test-area-card">
+               <padding>
+                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+               </padding>
+               <Label text="测试区域4" styleClass="area-title" />
+
+               <!-- 串口连接控制 -->
+               <HBox spacing="5.0" alignment="CENTER_LEFT">
+                  <ComboBox fx:id="area4PortComboBox" prefWidth="80.0" promptText="串口" />
+                  <Button fx:id="area4ConnectButton" text="连接" prefWidth="50.0" onAction="#onArea4Connect" styleClass="connect-button" />
+                  <Button fx:id="area4DisconnectButton" text="断开" prefWidth="50.0" onAction="#onArea4Disconnect" disable="true" styleClass="disconnect-button" />
+                  <Label fx:id="area4StatusLabel" text="未连接" styleClass="connection-status" />
+               </HBox>
+
+               <TextArea fx:id="testArea4" VBox.vgrow="ALWAYS" minHeight="130.0" prefHeight="150.0"
+                        promptText="测试区域4的结果将在这里显示..."
+                        styleClass="test-area-text" editable="false" wrapText="true" />
+               <Button fx:id="testButton4" text="测试4" styleClass="start-button"
+                       prefWidth="100.0" onAction="#onTest4" disable="true" />
+            </VBox>
+
+            <!-- 测试区域5 -->
+            <VBox HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS" spacing="2.0" styleClass="test-area-card">
+               <padding>
+                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+               </padding>
+               <Label text="测试区域5" styleClass="area-title" />
+
+               <!-- 串口连接控制 -->
+               <HBox spacing="5.0" alignment="CENTER_LEFT">
+                  <ComboBox fx:id="area5PortComboBox" prefWidth="80.0" promptText="串口" />
+                  <Button fx:id="area5ConnectButton" text="连接" prefWidth="50.0" onAction="#onArea5Connect" styleClass="connect-button" />
+                  <Button fx:id="area5DisconnectButton" text="断开" prefWidth="50.0" onAction="#onArea5Disconnect" disable="true" styleClass="disconnect-button" />
+                  <Label fx:id="area5StatusLabel" text="未连接" styleClass="connection-status" />
+               </HBox>
+
+               <TextArea fx:id="testArea5" VBox.vgrow="ALWAYS" minHeight="130.0" prefHeight="150.0"
+                        promptText="测试区域5的结果将在这里显示..."
+                        styleClass="test-area-text" editable="false" wrapText="true" />
+               <Button fx:id="testButton5" text="测试5" styleClass="start-button"
+                       prefWidth="100.0" onAction="#onTest5" disable="true" />
+            </VBox>
+
+            <!-- 测试区域6 -->
+            <VBox HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS" spacing="2.0" styleClass="test-area-card">
+               <padding>
+                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+               </padding>
+               <Label text="测试区域6" styleClass="area-title" />
+
+               <!-- 串口连接控制 -->
+               <HBox spacing="5.0" alignment="CENTER_LEFT">
+                  <ComboBox fx:id="area6PortComboBox" prefWidth="80.0" promptText="串口" />
+                  <Button fx:id="area6ConnectButton" text="连接" prefWidth="50.0" onAction="#onArea6Connect" styleClass="connect-button" />
+                  <Button fx:id="area6DisconnectButton" text="断开" prefWidth="50.0" onAction="#onArea6Disconnect" disable="true" styleClass="disconnect-button" />
+                  <Label fx:id="area6StatusLabel" text="未连接" styleClass="connection-status" />
+               </HBox>
+
+               <TextArea fx:id="testArea6" VBox.vgrow="ALWAYS" minHeight="130.0" prefHeight="150.0"
+                        promptText="测试区域6的结果将在这里显示..."
+                        styleClass="test-area-text" editable="false" wrapText="true" />
+               <Button fx:id="testButton6" text="测试6" styleClass="start-button"
+                       prefWidth="100.0" onAction="#onTest6" disable="true" />
+            </VBox>
+         </HBox>
+      </VBox>
+   </center>
+   
+   <!-- 底部状态栏 -->
+   <bottom>
+      <VBox styleClass="status-section">
+         <padding>
+            <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
+         </padding>
+         <Separator />
+         <HBox spacing="20.0" alignment="CENTER_LEFT">
+            <Label fx:id="connectionStatusLabel" text="连接状态: 未连接" styleClass="status-label" />
+            <Label fx:id="statusLabel" text="系统就绪" styleClass="status-label" />
+            <Separator orientation="VERTICAL" />
+            <Label text="测试统计:" styleClass="status-label" />
+            <Label fx:id="successCountLabel" text="成功: 0" styleClass="success-label" />
+            <Label fx:id="failureCountLabel" text="失败: 0" styleClass="failure-label" />
+            <Separator orientation="VERTICAL" />
+            <Label fx:id="versionLabel" text="测试台控制系统 v1.0" styleClass="version-label" />
+         </HBox>
+      </VBox>
+   </bottom>
+</BorderPane>
