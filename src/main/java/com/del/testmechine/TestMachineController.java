@@ -1233,6 +1233,10 @@ public class TestMachineController implements Initializable {
             packet[index++] = (byte) 0x40;  // 低字节
             packet[index++] = (byte) 0x1F;  // 高字节
 
+
+
+
+
             // 6-7. CRC校验 (2B) - MODBUS-CRC
             // 计算范围：从长度字段到电压校准值结束 (索引1-4)
             int crc = calculateCRC16(packet, 1, 4);
